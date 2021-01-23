@@ -1,0 +1,77 @@
+intents:
+  - greet
+  - goodbye
+  - what_you_can_do
+  - advise_anime
+  - advise_manga
+  - what_is_rate
+  - watching
+  - reading
+  - bookmark
+  - open_bookmark
+  - random_anime
+
+entities:
+  - manga
+  - anime
+  - name
+  - episode
+
+actions:
+  - action_random_anime
+
+slots:
+  manga:
+    type: text
+
+  anime:
+    type: text
+
+  name:
+    type: text
+    initial_value: "Наруто"
+
+  episode:
+    type: text
+    initial_value: "1"
+
+responses:
+  utter_greet:
+  - text: "Привет!"
+
+  utter_goodbye:
+  - text: "Покеда"
+
+  utter_what_you_can_do:
+  - text: "Я могу советовать мангу или аниме. Открывать их для употребления. Добавлять в закладки. И могу выкидывать рандомное аниме для просмотра."
+
+  utter_advise_anime:
+  - text: "Можем начать с аниме {name}!"
+
+  utter_advise_manga:
+  - text: "Можем остановиться на манге {name}!"
+
+  utter_dop_advise_anime:
+  - text: "Я могу найти похожее на {name} аниме."
+
+  utter_dop_advise_manga:
+  - text: "Хотите, я найду и аниме по {name}?"
+
+  utter_what_is_rate:
+  - text: "Средняя оценка {name} высокая."
+
+  utter_watching:
+  - text: "Включаю {episode} серию {name}."
+
+  utter_reading:
+  - text: "Открываю {episode} главу {name}."
+
+  utter_bookmark:
+  - text: "Сохранено в закладках!"
+
+  utter_open_bookmark:
+  - text: "Ранее мы добавили {name}."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
